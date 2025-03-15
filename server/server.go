@@ -1,7 +1,6 @@
 package server
 
 import (
-	"errors"
 	"log/slog"
 	"net/http"
 	"os"
@@ -49,7 +48,7 @@ func (wws *WfdWebServer) ParseRecipe(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		w.Write([]byte("Failed parsing recipe from url."))
-		wws.logger.Error("failed parsing recipe", errors.Unwrap(err))
+		wws.logger.Error("failed parsing recipe", slog.Any("error", err))
 		return
 	}
 
