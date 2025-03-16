@@ -1,4 +1,7 @@
 # WFD - What's For Dinner?
 
-The goal of this project is to create an app to help me keep track of recipes, plan meals, and generate shopping lists.
-Ideally, you will be able to provide a URL or plain text of the recipe and the app will use an LLM to extract the recipe steps and ingredients.
+Skip the paywalls and life stories and get to the recipes.
+
+A simple recipe parser and UI for parsing recipes into an easy to read and follow format.
+
+This project takes advantage of the [Recipe Schema](https://developers.google.com/search/docs/appearance/structured-data/recipe) that recipes use for SEO. This data is tucked away in a <head> tag and will allow for getting around paywalls.
