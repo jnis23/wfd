@@ -8,6 +8,7 @@ type Recipe = {
 type Ingredient = {
     name: string;
     quantity: string;
+    unit: string;
 }
 
 type Instruction = {
