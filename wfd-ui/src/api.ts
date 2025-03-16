@@ -14,6 +14,8 @@ class Api {
 }
 
 
-const api = new Api("http://localhost:8080");
+const host = window.location.hostname;
+
+const api = new Api(`http://${host}:8080`);
 
 export default api;

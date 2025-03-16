@@ -29,6 +29,6 @@ var serveCmd = &cobra.Command{
 }
 
 func init() {
-	serveCmd.Flags().StringVarP(&addr, "addr", "a", "localhost:8080", "The address to serve the web server on")
+	serveCmd.Flags().StringVarP(&addr, "addr", "a", ":8080", "The address to serve the web server on")
 	rootCmd.AddCommand(serveCmd)
 }
