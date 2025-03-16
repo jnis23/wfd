@@ -29,8 +29,24 @@ func (wws *WfdWebServer) Serve() error {
 	return http.ListenAndServe(wws.addr, mux)
 }
 
+func cors(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Credentials", "true")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
+		if r.Method == "OPTIONS" {
+			http.Error(w, "No Content", http.StatusNoContent)
+			return
+		}
+
+		next(w, r)
+	}
+}
+
 func (wws *WfdWebServer) RegisterHandlers(mux *http.ServeMux) {
-	mux.HandleFunc("GET /parse", wws.ParseRecipe)
+	mux.HandleFunc("GET /parse", cors(wws.ParseRecipe))
 }
 
 // Parses url from query param
