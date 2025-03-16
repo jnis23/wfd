@@ -3,8 +3,9 @@ package app
 import (
 	"log/slog"
 	"os"
-	"wfd/parser"
-	"wfd/recipe"
+
+	"github.com/jnis23/wfd/parser"
+	"github.com/jnis23/wfd/recipe"
 )
 
 type Wfd struct {

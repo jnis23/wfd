@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"wfd/recipe"
+
+	"github.com/jnis23/wfd/recipe"
 
 	"golang.org/x/net/html"
 )

@@ -4,7 +4,8 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
-	"wfd/app"
+
+	"github.com/jnis23/wfd/app"
 )
 
 type WfdWebServer struct {

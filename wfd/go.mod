@@ -1,4 +1,4 @@
-module wfd
+module github.com/jnis23/wfd
 
 go 1.24.1
 

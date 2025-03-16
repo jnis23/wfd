@@ -2,8 +2,9 @@ package cli
 
 import (
 	"log"
-	"wfd/app"
-	"wfd/server"
+
+	"github.com/jnis23/wfd/app"
+	"github.com/jnis23/wfd/server"
 
 	"github.com/spf13/cobra"
 )

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/spf13/cobra"
+	"github.com/jnis23/wfd/app"
 
-	"wfd/app"
+	"github.com/spf13/cobra"
 )
 
 var url string
