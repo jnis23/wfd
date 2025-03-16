@@ -62,7 +62,7 @@ func parseRecipe(recipeJson []byte) (recipe.RecipeJson, error) {
 	// try direct parsing
 	// json is not an array
 	var rec recipe.RecipeJson
-	if err := json.Unmarshal(recipeJson, &rec); err == nil {
+	if err := json.Unmarshal(recipeJson, &rec); err == nil && rec.Name != "" {
 		return rec, nil
 	}
 	// json is an array

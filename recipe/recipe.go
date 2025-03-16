@@ -19,10 +19,7 @@ type RecipeJson struct {
 func (rj *RecipeJson) ToRecipe() *Recipe {
 	ingredients := make([]Ingredient, len(rj.Ingredients))
 	for i, ingredient := range rj.Ingredients {
-		// TODO: Parse the quantity from the ingredient.
-		ingredients[i] = Ingredient{
-			Name: ingredient,
-		}
+		ingredients[i] = ParseIngredient(ingredient)
 	}
 	return &Recipe{
 		Name:         rj.Name,
@@ -46,6 +43,7 @@ func (r *Recipe) ToJson() ([]byte, error) {
 type Ingredient struct {
 	Name     string `json:"name"`
 	Quantity string `json:"quantity"`
+	Unit     string `json:"unit"`
 }
 
 type Instruction struct {
